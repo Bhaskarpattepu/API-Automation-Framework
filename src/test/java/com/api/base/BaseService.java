@@ -18,10 +18,28 @@ public class BaseService {
     {
         requestSpecification= RestAssured.given().baseUri(BASE_URL);
     }
-    protected Response postRequest(LoginRequest payload, String endpoint)
+    protected Response postRequest(Object payload, String endpoint)
     {
         return requestSpecification.contentType(ContentType.JSON).body(payload).post(endpoint);
     }
+
+    public Response getRequest(String endpoint)
+    {
+        return requestSpecification.get(endpoint);
+    }
+    protected void setAuthToken(String token)
+    {
+        requestSpecification.header("Authorization","Bearer "+token);
+    }
+
+    protected Response putRequest(Object payload, String endpoint)
+    {
+
+        return requestSpecification.contentType(ContentType.JSON).body(payload).put(endpoint);
+
+    }
+
+
 
 
 }

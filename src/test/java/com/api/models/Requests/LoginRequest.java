@@ -1,25 +1,25 @@
 package com.api.models.Requests;
 
 public class LoginRequest {
-    private String usename;
+    private String username;
     private String password;
 
-    public LoginRequest(String usename, String password) {
+    public LoginRequest(String username, String password) {
         super();
-        this.usename = usename;
+        this.username = username;
         this.password = password;
     }
 
-    public String getUsename() {
-        return usename;
+    public String getUsername() {
+        return username;
     }
 
     public String getPassword() {
         return password;
     }
 
-    public void setUsename(String usename) {
-        this.usename = usename;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public void setPassword(String password) {
@@ -29,7 +29,7 @@ public class LoginRequest {
     @Override
     public String toString() {
         return "LoginRequest{" +
-                "usename='" + usename + '\'' +
+                "usename='" + username + '\'' +
                 ", password='" + password + '\'' +
                 '}';
     }
